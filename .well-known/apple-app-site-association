@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "U8H5DHWUZP.com.yourname.einsteinrecall",
-        "paths": ["/share/card", "/share/card/*"]
+        "paths": ["/einstein-recall-app/share/card", "/einstein-recall-app/share/card/*"]
       }
     ]
   }
