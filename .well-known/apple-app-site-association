@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "U8H5DHWUZP.com.yourname.einsteinrecall",
+        "paths": ["/share/card", "/share/card/*"]
+      }
+    ]
+  }
+}
