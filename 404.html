@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstein Recall - Import Card</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 400px;
+        }
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px;
+        }
+        .button-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // Extract card ID from URL
+            const pathParts = window.location.pathname.split('/');
+            const cardId = pathParts[pathParts.length - 1];
+            
+            if (cardId && cardId.length > 10) {
+                // Try to open in app
+                const appUrl = `einsteinrecall://share/card/${cardId}`;
+                window.location.href = appUrl;
+                
+                // After 2 seconds, show App Store button
+                setTimeout(function() {
+                    document.getElementById('openApp').style.display = 'none';
+                    document.getElementById('getApp').style.display = 'block';
+                }, 2000);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🧠</div>
+        <h1>Einstein Recall</h1>
+        <p>Opening card in app...</p>
+        
+        <div id="openApp">
+            <a href="#" onclick="window.location.reload();" class="button">
+                Open in App
+            </a>
+        </div>
+        
+        <div id="getApp" style="display: none;">
+            <p>Don't have Einstein Recall?</p>
+            <a href="https://apps.apple.com/app/einstein-recall/6746659104" class="button">
+                Get the App
+            </a>
+        </div>
+    </div>
+</body>
+</html>
